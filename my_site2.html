@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        background-color: #eee;
+      }
+      iframe {
+        width: 100%; /* 让iframe充满容器宽度 */
+        height: 100%; /* 让iframe充满容器高度 */
+        border: none; /* 去掉边框 */
+      }
+      /* * {
+        border: 1px solid;
+      } */
+      .flex {
+        display: flex;
+      }
+      .flex1 {
+        flex: 1;
+      }
+      .baiSe {
+        background-color: white;
+      }
+      .column {
+        flex-direction: column;
+      }
+      .row {
+        flex-direction: row;
+      }
+      .mg8 {
+        margin: 8px;
+      }
+      .mgr8 {
+        margin-right: 8px;
+      }
+      .mgt8 {
+        margin-top: 8px;
+      }
+      .yinYing {
+        box-shadow: 0 0 5px 1px #999;
+      }
+      .daoHang {
+        padding: 10px 20px;
+        border-bottom: 1px solid rgb(190, 190, 190);
+        font-size: 14px;
+        color: #666;
+        margin-top: 22px;
+      }
+      .tuPian {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .fenLei {
+        font-size: 44px;
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .touBu {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        display: inline;
+      }
+      li a {
+        display: block;
+        padding: 8px;
+        /* background-color: #dddddd; */
+      }
+      /* 当屏幕宽度小于600px时要改变的css */
+      @media (max-width: 600px) {
+        .ceBian {
+          display: none;
+        }
+        .neiRong {
+          flex-direction: column;
+        }
+        .shuJuQu {
+          flex-direction: column;
+        }
+        .youQu {
+          margin-left: 8px;
+        }
+        .shuJu {
+          margin: 0 0 8px;
+          flex: auto;
+        }
+        .neiRong::-webkit-scrollbar {
+          display: none;
+        }
+        .cover {
+          object-fit: cover;
+        }
+      }
+    </style>
+    <link rel="icon" href="favicon.ico" />
+  </head>
+  <body class="flex">
+    <!-- 侧边栏 -->
+    <div style="width: 200px; z-index: 2" class="baiSe ceBian">
+      <!-- 头像栏 -->
+      <div
+        style="
+          padding: 10px;
+          align-items: center;
+          justify-content: center;
+          border-bottom: 1px solid #999;
+        "
+        class="flex"
+      >
+        <img src="./头像3.png" alt="头像" width="120px" height="160px" />
+        <div style="font-size: 25px; margin-left: 10px">相片合集</div>
+      </div>
+      <!-- 导航栏 -->
+      <div class="flex1">
+        <div class="daoHang">登录</div>
+        <div class="daoHang">注册</div>
+        <div class="daoHang">上传图片</div>
+        <div class="daoHang">分类目录</div>
+        <div class="daoHang">搜索</div>
+      </div>
+    </div>
+    <!-- 主区域 -->
+    <div class="flex1 column flex">
+      <!-- 头部区 -->
+      <div style="height: 60px; z-index: 1" class="baiSe">
+        <ul class="touBu" style="display: flex; align-items: center">
+          <li>
+            <a href="###">主页</a>
+          </li>
+          <li>
+            <a href="###">记录</a>
+          </li>
+          <li>
+            <a href="###">上传</a>
+          </li>
+          <li>
+            <a href="###">下载</a>
+          </li>
+          <li>
+            <a href="###">社区</a>
+          </li>
+          <li>
+            <a href="###">知道</a>
+          </li>
+        </ul>
+      </div>
+      <!-- 内容区 -->
+      <div style="overflow: auto" class="flex1 flex neiRong">
+        <!-- 左区 -->
+        <div style="flex: 3" class="mg8 flex column">
+          <!-- 数据区 -->
+          <div style="flex: 1" class="flex row shuJuQu">
+            <!-- 数据块 -->
+            <div
+              style="height: 100px"
+              class="shuJu flex1 mgr8 baiSe flex fenLei"
+            >
+              <p>旅游</p>
+            </div>
+            <div
+              style="height: 100px"
+              class="flex fenLei shuJu flex1 mgr8 baiSe"
+            >
+              <p>喜欢ff公主</p>
+            </div>
+            <div
+              style="height: 100px"
+              class="flex fenLei shuJu flex1 mgr8 baiSe"
+            >
+              <p>社团</p>
+            </div>
+            <div style="height: 100px" class="flex fenLei shuJu flex1 baiSe">
+              <p>生活</p>
+            </div>
+          </div>
+          <!-- 列表区 -->
+          <div style="flex: 6" class="flex column">
+            <!-- 列表项 -->
+            <!-- <div class="flex1 mgt8 baiSe"></div>
+            <div class="flex1 mgt8 baiSe"></div>
+            <div class="flex1 mgt8 baiSe"></div> -->
+            <div>
+              <p
+                style="color: #999; margin-bottom: 4px"
+                class="mgt8 baiSe flex"
+              >
+                照片一览：
+              </p>
+            </div>
+            <div style="height: 120px" class="mgt8 baiSe flex">
+              <iframe src="my_site3.html"></iframe>
+            </div>
+            <div style="height: 120px" class="mgt8 baiSe flex">
+              <img src="./takundo1.jpg" alt="照片1" class="tuPian" />
+            </div>
+            <div style="height: 120px" class="mgt8 baiSe flex">
+              <img src="./takundo2.jpg" alt="照片2" class="tuPian" />
+            </div>
+            <div style="height: 120px" class="mgt8 baiSe flex">
+              <img src="./takundo3.jpg" alt="照片3" class="tuPian" />
+            </div>
+            <div style="height: 120px" class="mgt8 baiSe flex">
+              <img src="./takundo4.jpg" alt="照片4" class="tuPian" />
+            </div>
+            <div style="height: 120px" class="mgt8 baiSe flex">
+              <img src="./picture1.jpg" alt="照片5" class="tuPian" />
+            </div>
+            <div style="height: 120px" class="mgt8 baiSe flex">
+              <img src="./picture2.jpg" alt="照片6" class="tuPian" />
+            </div>
+          </div>
+        </div>
+        <!-- 右区 -->
+        <div style="flex: 1" class="flex column mgr8 mgt8 youQu">
+          <!-- 提示区 -->
+          <div style="height: 150px" class="baiSe">
+            <p>zyf看这里这里</p>
+            <p>未完成。。。</p>
+            <p>啦</p>
+            <p>啦</p>
+          </div>
+          <!-- 消息区 -->
+          <div style="height: 300px" class="mgt8 baiSe">
+            <iframe src="my_site3.html"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

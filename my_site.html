@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>照片合集</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      /* .box {
+        height: 80vh;
+        width: 70%;
+        max-width: 600px;
+        overflow-wrap: break-word;
+        box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+          rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+        overflow-wrap: break-word;
+        overflow-y: scroll;
+        text-align: center;
+      } */
+      .btn {
+        cursor: pointer;
+        position: relative;
+        padding: 10px 20px;
+        background: white;
+        font-size: 28px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        transition: all 1s;
+      }
+
+      .btn::after,
+      .btn::before {
+        content: " ";
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        border: 0px solid #fff;
+        transition: all 1s;
+      }
+
+      .btn::after {
+        top: -1px;
+        left: -1px;
+        border-top: 5px solid black;
+        border-left: 5px solid black;
+      }
+
+      .btn::before {
+        bottom: -1px;
+        right: -1px;
+        border-bottom: 5px solid black;
+        border-right: 5px solid black;
+      }
+
+      .btn:hover {
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+      }
+      .btn:hover::before,
+      .btn:hover::after {
+        width: 100%;
+        height: 100%;
+      }
+
+      /* .data-container {
+        background: #ffebee;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      } */
+    </style>
+  </head>
+
+  <body text="65,140,171">
+    <div style="text-align: center; background-color: #f1f1f1; padding: 0px">
+      <img src="./头像3.png" alt="头像" width="150px" height="180px" />
+    </div>
+    <div
+      style="
+        max-width: 700px;
+        margin: 30px auto;
+        padding: 15px;
+        line-height: 1.7;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      "
+      class="box"
+    >
+      <div>
+        <h1 style="margin-top: auto" class="btn">照片合集</h1>
+      </div>
+
+      <p>漫步街头的闲逛者是波德莱尔眼中真正的诗人</p>
+      <p>巴黎富丽堂皇的拱廊街道曾是消费主义的温床</p>
+      <p>赛博朋克风格暗含着反叛的不羁历史</p>
+      <p>我们习以为常的种种事物，从另一个视角看去，或许便是别样瑰奇风景</p>
+      <p>寻常细微之物常常是大千世界的缩影</p>
+      <hr
+        style="
+          filter: progid:DXImageTransform.Microsoft.Glow(color=#987cb9,strength=10);
+        "
+        width="80%"
+        color="#987cb9"
+        size="1"
+      />
+      <p>岁月不居，时节如流</p>
+      <p>记忆若非时时拂拭，终会裹满时间的淤泥、黯淡难识</p>
+      <p>一张照片就如同生命的航船在时间之海投下巨锚</p>
+      <p>它的长索可以把我们一次次牵回锚点</p>
+      <p>以免在记忆中刻舟求剑地追寻</p>
+    </div>
+    <div
+      style="
+        text-align: center;
+        background-color: #f1f1f1;
+        padding: 40px;
+        font-size: 12px;
+      "
+    >
+      <p>我的网站地址：</p>
+      <a href="./my_site2.html">下一页点这里！</a>
+    </div>
+  </body>
+</html>

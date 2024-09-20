@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Peta Daftar Titik</title>
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <script src="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js"></script>
+    <link
+      href="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css"
+      rel="stylesheet"
+    />
+    <!-- <script src="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js"></script>
+    <link
+      href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css"
+      rel="stylesheet"
+    /> -->
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map">？？？？？</div>
+    <script>
+      // Daftar Titik. Anda bisa menambahkan marker baru di sini
+      //   地点列表，可以添加新的标记点
+      var markers = [
+        {
+          lat: 30.5728,
+          lng: 104.0668,
+          keterangan: "Chengdu",
+        },
+        {
+          lat: 28.7665,
+          lng: 104.6344,
+          keterangan: "Yibin",
+        },
+        {
+          lat: 30.3874,
+          lng: 104.2862,
+          keterangan: "Guanghan",
+        },
+        {
+          lat: 31.2151,
+          lng: 107.4783,
+          keterangan: "Dazhou",
+        },
+
+        {
+          lat: 33.25,
+          lng: 104.1693,
+          keterangan: "Jiuzhai",
+        },
+        {
+          lat: 34.3416, // 西安的纬度
+          lng: 108.9398, // 西安的经度
+          keterangan: "Xi'an", // 描述信息
+        },
+        {
+          lat: 29.5648, // 重庆的纬度
+          lng: 106.5578, // 重庆的经度
+          keterangan: "Chongqing", // 描述信息
+        },
+      ];
+
+      // Fungsi untuk menambahkan marker ke map
+      // 用于向地图添加标记的函数
+      function addMarker(marker) {
+        new maplibregl.Marker()
+          .setLngLat([marker.lng, marker.lat]) //设置标记的经纬度
+          .setPopup(
+            new maplibregl.Popup({ offset: 25 }) // add popups
+              .setHTML("<h3>" + marker.keterangan + "</h3>")
+          ) //创建弹出窗口
+          .addTo(map); //将标记添加到地图
+      }
+
+      // Deklarasi map
+      var map = new maplibregl.Map({
+        container: "map",
+        style: "https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json",
+        // style: "mapbox://styles/mapbox/satellite-streets-v11",
+        center: [104.0668, 30.5728],
+        zoom: 8,
+      });
+
+      // Tambahkan marker ke map
+      //遍历数组
+      markers.forEach((marker) => addMarker(marker));
+
+      // Zoom ke semua marker
+      // 缩放至所有标记点
+      const bounds = new maplibregl.LngLatBounds();
+      markers.map((marker) => bounds.extend([marker.lng, marker.lat]));
+      map.fitBounds(bounds, {
+        padding: 100,
+      });
+    </script>
+  </body>
+</html>
